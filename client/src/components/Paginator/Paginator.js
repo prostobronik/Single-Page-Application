@@ -1,5 +1,5 @@
 import React from 'react'
-import './Paginator.css'
+import style from './Paginator.module.css'
 
 const Paginator = ({ currentPage, pageCount, onChoosePage }) => {
   const pageLeft =
@@ -26,14 +26,14 @@ const Paginator = ({ currentPage, pageCount, onChoosePage }) => {
   }
 
   return (
-    <div className="paginator">
+    <div className={style.paginator}>
       {pages.map((page) => (
         <span
           key={page}
           className={
             page === currentPage
-              ? 'paginator__page paginator__page_active'
-              : 'paginator__page'
+              ? `${style.paginator__page} ${style.paginator__page_active}`
+              : `${style.paginator__page}`
           }
           onClick={() => onChoosePage(page)}
         >

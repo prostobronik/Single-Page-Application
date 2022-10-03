@@ -1,0 +1,25 @@
+.tableForm {
+	padding: 20px 0;
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+   margin: 0 auto;
+}
+
+.tableForm__button {
+	cursor: pointer;
+   margin-left: 1rem;
+}
+
+.select{
+   margin: 1rem;
+   width: 150px;
+   height: 25px;
+}
+
+.input{
+   margin: 1rem;
+   width: 150px;
+   height: 25px;
+}

@@ -2,17 +2,20 @@
 	padding: 20px 0;
 	display: flex;
 	gap: 20px;
+   position: absolute;
+   right: 50%;
 }
 
 .paginator__page {
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	outline: 1px solid black;
+   color: black;
 	transition: 0.3 ease;
+   font-size: 1.5rem;
 }
 
 .paginator__page:hover {
@@ -20,5 +23,5 @@
 }
 
 .paginator__page_active {
-	outline: 1px solid red;
+   color: red;
 }

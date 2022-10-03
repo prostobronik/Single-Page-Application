@@ -1,5 +1,5 @@
 import React from 'react'
-import './TableForm.css'
+import style from './TableForm.module.css'
 import { useState } from 'react'
 
 export default function TableForm({ filterSubmit, onReset }) {
@@ -13,6 +13,7 @@ export default function TableForm({ filterSubmit, onReset }) {
   function handleLawChange(e) {
     setLaw(e.target.value)
   }
+
   function handleArgumentChange(e) {
     setArgument(e.target.value)
   }
@@ -30,14 +31,26 @@ export default function TableForm({ filterSubmit, onReset }) {
   }
 
   return (
-    <form className="table-form" onSubmit={handleSubmit}>
-      <select name="name" value={name} onChange={handleNameChange} required>
+    <form className={style.tableForm} onSubmit={handleSubmit}>
+      <select
+        className={style.select}
+        name="name"
+        value={name}
+        onChange={handleNameChange}
+        required
+      >
         <option value="">Поле...</option>
         <option value="name">Название</option>
         <option value="points">Количество</option>
         <option value="distance">Расстояние</option>
       </select>
-      <select name="law" value={law} onChange={handleLawChange} required>
+      <select
+        className={style.select}
+        name="law"
+        value={law}
+        onChange={handleLawChange}
+        required
+      >
         <option value="">Условие...</option>
         <option value="equal">Равно</option>
         <option value="contain">Содержит</option>
@@ -45,6 +58,7 @@ export default function TableForm({ filterSubmit, onReset }) {
         <option value="less">Меньше</option>
       </select>
       <input
+        className={style.input}
         name="argument"
         value={argument}
         onChange={handleArgumentChange}
@@ -53,13 +67,13 @@ export default function TableForm({ filterSubmit, onReset }) {
         required
       />
       <button
-        className="table-form__button"
+        className={style.tableForm__button}
         type="reset"
         onClick={onClearFilter}
       >
         Сброс
       </button>
-      <button className="table-form__button" type="submit">
+      <button className={style.tableForm__button} type="submit">
         Фильтр
       </button>
     </form>
